@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <div className="bg-slate-900 pt-2 md:pt-20 pb-4">
-        <div className=" pb-10 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 place-items-center">
+        <div className=" pb-10 pt-5 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 place-items-center">
           <div className="md:px-0 px-5 text-sm text-white">
             <div className=" font-extrabold">Services</div>
 
