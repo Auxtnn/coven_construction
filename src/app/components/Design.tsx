@@ -13,16 +13,15 @@ interface DesignItem {
 
 const Design: React.FC = () => {
   return (
-    <AnimatedSection>
-      <div className=" py-8 md:py-6" id="project">
-        <div className="text-blue px-5 text-2xl font-[900] md:text-center tracking-wider mt-4">
-          Our Featured Building Plans
-        </div>
-        <div className="text-zinc-900 px-5 text-opacity-80 m-auto md:text-center text-sm tracking-wider max-w-[550px] mt-2 md:mt-4 max-md:max-w-full">
-          Discover a curated collection of interior & exterior designs that
-          blend innovation with functionality.
-        </div>
-
+    <div className=" py-8 md:py-6" id="design">
+      <div className="text-blue px-5 text-2xl font-[900] md:text-center tracking-wider mt-4">
+        Our Featured Building Plans
+      </div>
+      <div className="text-zinc-900 px-5 text-opacity-80 m-auto md:text-center text-sm tracking-wider max-w-[550px] mt-2 md:mt-4 max-md:max-w-full">
+        Discover a curated collection of interior & exterior designs that blend
+        innovation with functionality.
+      </div>
+      <AnimatedSection>
         <div className="container mx-auto flex flex-col md:flex-row items-center w-full md:px-4 lg:w-11/12">
           {designItems.map((item: DesignItem, index: number) => (
             <div
@@ -59,19 +58,20 @@ const Design: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center">
-          {" "}
-          {/* Adjusted this div */}
-          <Link
-            href="/"
-            className="text-white bg-blue flex items-center gap-2 px-4 py-2 md:my-5 rounded-full border border-blue shadow-xl text-sm"
-          >
-            <h3>See more</h3>
-            <IoIosArrowRoundForward className="text-white text-xl rounded-[50%] border" />
-          </Link>
-        </div>
+      </AnimatedSection>
+
+      <div className="flex justify-center">
+        {" "}
+        {/* Adjusted this div */}
+        <Link
+          href="/"
+          className="text-white bg-blue flex items-center gap-2 px-4 py-2 md:my-5 rounded-full border border-blue shadow-xl text-sm"
+        >
+          <h3>See more</h3>
+          <IoIosArrowRoundForward className="text-white text-xl rounded-[50%] border" />
+        </Link>
       </div>
-    </AnimatedSection>
+    </div>
   );
 };
 
