@@ -1,120 +1,64 @@
 import React from "react";
+import Image from "next/image";
 
-const About = () => {
+const About: React.FC = () => {
   return (
-    <div className="flex justify-center items-center px-16 py-20 bg-blue-50 max-md:px-5">
+    <div
+      className="flex justify-center items-center px-16  max-md:px-5 md:pt-16"
+      id="about"
+    >
       <div className="mt-8 w-full max-w-[1200px] max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          <div className="flex flex-col w-[50%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col grow max-md:mt-10 max-md:max-w-full">
-              <div className="text-3xl font-semibold leading-10 text-zinc-950 max-md:max-w-full">
-                Why Choose Bangoonan?
-              </div>
-              <div className="mt-2.5 text-base font-medium leading-7 text-gray-400 max-md:max-w-full">
-                Metus morbi sit cras sit a penatibus mauris lobortis tellus.
-                Nisl velit etiam.
-              </div>
-              <div className="flex gap-5 mt-8 rounded-xl max-md:flex-wrap max-md:max-w-full">
-                <div className="flex flex-col justify-center items-start self-start p-5 bg-orange-300 rounded-[100px]">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8741b983cd4a4a33f5fd9c6a2f8bf9494073cf42a3b6852841cc8efd7604dd8?apiKey=0b485936f214445abefe43ed619ece08&"
-                    className="w-4 aspect-square"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <div className="text-xl font-semibold leading-7 text-gray-950">
-                    Excellent Communication
-                  </div>
-                  <div className="mt-2 text-sm leading-6 text-gray-400">
-                    Aliquet rhoncus ornare dolor quam. Quis egestas aliquam.
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-8 rounded-xl max-md:flex-wrap max-md:max-w-full">
-                <div className="flex flex-col justify-center items-start self-start p-5 bg-orange-300 rounded-[100px]">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8741b983cd4a4a33f5fd9c6a2f8bf9494073cf42a3b6852841cc8efd7604dd8?apiKey=0b485936f214445abefe43ed619ece08&"
-                    className="w-4 aspect-square"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <div className="text-xl font-semibold leading-7 text-gray-950">
-                    Excellent Communication
-                  </div>
-                  <div className="mt-2 text-sm leading-6 text-gray-400">
-                    Aliquet rhoncus ornare dolor quam. Quis egestas aliquam.
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-6 rounded-xl max-md:flex-wrap max-md:max-w-full">
-                <div className="flex flex-col justify-center items-start self-start p-5 bg-orange-300 rounded-[100px]">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8741b983cd4a4a33f5fd9c6a2f8bf9494073cf42a3b6852841cc8efd7604dd8?apiKey=0b485936f214445abefe43ed619ece08&"
-                    className="w-4 aspect-square"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <div className="text-xl font-semibold leading-7 text-gray-950">
-                    Extensive Market Knowledge
-                  </div>
-                  <div className="mt-2 text-sm leading-6 text-gray-400">
-                    Aliquet rhoncus ornare dolor quam. Quis egestas aliquam.
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-6 rounded-xl max-md:flex-wrap max-md:max-w-full">
-                <div className="flex flex-col justify-center items-start self-start p-5 bg-orange-300 rounded-[100px]">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8741b983cd4a4a33f5fd9c6a2f8bf9494073cf42a3b6852841cc8efd7604dd8?apiKey=0b485936f214445abefe43ed619ece08&"
-                    className="w-4 aspect-square"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <div className="text-xl font-semibold leading-7 text-gray-950">
-                    Strong Negotiators
-                  </div>
-                  <div className="mt-2 text-sm leading-6 text-gray-400">
-                    Aliquet rhoncus ornare dolor quam. Quis egestas aliquam.
-                  </div>
-                </div>
-              </div>
-             
+          <div className="flex flex-col md:mr-10 mr-0 mx-auto w-[50%] md:order-first order-last mt-6 md:mt-0 max-md:ml-0 max-md:w-full">
+            <div className="lg:mt-[4rem]">
+              <Image
+                src="/images/w2.png"
+                alt="image"
+                width={650}
+                quality={100}
+                height={20}
+                unoptimized
+                className="rounded-bl-full  border-blue shadow-xl border-b-8 rounded-br-full"
+              />
             </div>
           </div>
-          <div className="flex flex-col ml-5 w-[50%] max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col w-[50%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow max-md:mt-10 max-md:max-w-full">
-              <div className="max-md:max-w-full">
-                <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-                  <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-                    <div className="flex flex-col grow justify-center px-20 py-16 mx-auto w-full text-white rounded-xl bg-slate-900 max-md:px-5 max-md:mt-5">
-                      <div className="flex gap-3.5 text-3xl font-semibold leading-10">
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5df6ce4bda0e637098a59a85ba54e6177f04f06bd298f16b691e7e1ce074192?apiKey=0b485936f214445abefe43ed619ece08&"
-                          className="shrink-0 w-12 aspect-square"
-                        />
-                        <div className="flex-auto self-start mt-4">
-                          10,000 +
-                        </div>
-                      </div>
-                      <div className="self-center mt-7 text-base font-medium leading-6">
-                        Properties Sold
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-                    <div className="flex flex-col grow justify-center w-full rounded-xl bg-slate-900 max-md:mt-5">
-                      <div className="shrink-0 bg-orange-300 h-[223px]" />
-                    </div>
-                  </div>
-                </div>
+              <div className="md:text-xl text-lg font-bold text-blue max-md:max-w-full">
+                Welcome to COVE DESIGN AND CONTRACTING LTD
               </div>
-              <div className="flex flex-col justify-center mt-5 rounded-xl bg-slate-900 max-md:max-w-full">
-                <div className="shrink-0 bg-orange-300 h-[279px] max-md:max-w-full" />
+
+              <div className=" gap-5 mt-4 max-md:max-w-full">
+                <p className="text-sm">
+                  At CDC construction company, we believe that every building
+                  tells a story. With over 15years of experience in the
+                  construction industry, we have been privileged to be a part of
+                  countless stories, turning visions into realities.
+                </p>
+                <p className="text-sm mt-4">
+                  Our mission is simple: to deliver exceptional construction
+                  solutions with integrity, innovation, and excellence. From
+                  residential projects to commercial developments, we approach
+                  each endeavor with a commitment to quality craftsmanship,
+                  attention to detail, and client satisfaction.
+                </p>
+
+                <p className="mt-2 text-sm leading-6">
+                  What sets us apart is our dedicated team of professionals who
+                  bring expertise, passion, and a collaborative spirit to every
+                  project. We work closely with our clients, architects, and
+                  subcontractors to ensure seamless communication and
+                  coordination from concept to completion.
+                </p>
+
+                <p className="text-sm mt-4">
+                  Thank you for considering CDC construction company for your
+                  construction needs. We look forward to the opportunity to work
+                  with you and to be a part of your next chapter
+                </p>
+                <div className="text-lg md:text-xl mt-3 leading-10 font-bold text-blue max-md:max-w-full">
+                  Engr. Anasiudu David (CEO, C.D.C){" "}
+                </div>
               </div>
             </div>
           </div>
@@ -122,6 +66,6 @@ const About = () => {
       </div>
     </div>
   );
-}
+};
 
 export default About;

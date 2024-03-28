@@ -1,14 +1,17 @@
-"use client"
+"use client";
+import React, { useEffect, ReactNode } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-import { useEffect  } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+interface AnimatedSectionProps {
+  children: ReactNode;
+}
 
-const AnimatedSection = ({ children }) => {
+const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: true, 
-    threshold: 0.5, 
+    triggerOnce: true,
+    threshold: 0.5,
   });
 
   useEffect(() => {

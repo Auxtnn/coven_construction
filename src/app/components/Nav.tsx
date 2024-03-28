@@ -1,15 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { TfiClose } from "react-icons/tfi";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import AnimatedSection from "./AnimatedSection";
-import Image from "next/image";
-const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+const Navbar: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -21,8 +21,11 @@ const Navbar = () => {
 
   // Close the menu if clicked outside the menu
   useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (isMobileMenuOpen && !e.target.closest(".mobile-menu")) {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (
+        isMobileMenuOpen &&
+        !!(e.target as HTMLElement).closest(".mobile-menu")
+      ) {
         closeMobileMenu();
       }
     };
@@ -36,43 +39,71 @@ const Navbar = () => {
 
   return (
     <header className=" bg-white w-full sticky top-0 z-10">
-      <nav className="border shadow-xl bg-white mx-auto ">
+      <nav className="border shadow-xl bg-white mx-auto py-2">
         <AnimatedSection>
-          <div className="container mx-auto py-4 flex justify-between items-center relative">
-            <div className=" font-bold text-3xl">
+          <div className="container mx-auto flex justify-between items-center relative">
+            <div className="text-blue font-bold text-3xl">
               <Link href="/">
                 <Image
                   alt="logo"
-                  src="/images/logo.jpg"
-                  width="0"
-                  height="0"
+                  src="/images/logo.png"
+                  width={0}
+                  height={0}
                   sizes="100vw"
                   className="w-[10rem] h-auto"
                   unoptimized
                 />
               </Link>
             </div>
-            <div className="hidden md:flex items-center space-x-16 pr-2">
-              <Link href="/#home" className="hover:text-blue">
-                Home
+            <div className="hidden md:flex items-center md:space-x-5 lg:space-x-10 ">
+              <Link
+                href="/#about"
+                className="group inline-block relative text-gray-950 font-semibold transition-colors duration-300"
+              >
+                About
+                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+              </Link>
+              <Link
+                href="/#services"
+                className="group inline-block relative text-gray-950 font-semibold transition-colors duration-300"
+              >
+                Services
+                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
               </Link>
 
-              <Link href="/#about" className="hover:text-blue">
-                About
-              </Link>
-              <Link href="/#service" className="hover:text-blue">
-                Service
-              </Link>
-              <Link href="/#contact" className="hover:text-blue">
+              <Link
+                href="/#project"
+                className="group inline-block relative text-gray-950 font-semibold transition-colors duration-300"
+              >
                 Projects
+                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
               </Link>
-              <Link href="/#contact" className="hover:text-blue">
-                Designs
+              <Link
+                href="/#"
+                className="group inline-block relative text-gray-950 font-semibold transition-colors duration-300"
+              >
+                Bungalows
+                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+              </Link>
+              <Link
+                href="/#"
+                className="group inline-block relative text-gray-950 font-semibold transition-colors duration-300"
+              >
+                Duplex
+                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+              </Link>
+
+              <Link
+                href="#"
+                className="group inline-block relative text-gray-950 font-semibold transition-colors duration-300"
+              >
+                Flat
+                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
               </Link>
 
               <Link
                 href="/#contact"
-                className=" bg-blue text-white rounded-3xl border-blue border py-1 px-4 hover:bg-blue"
+                className="font-semibold bg-transparent shadow-lg text-blue rounded border-blue border py-2 px-4 hover:text-white hover:bg-blue"
               >
                 Contact Us
               </Link>
@@ -99,16 +130,9 @@ const Navbar = () => {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: 100, opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="md:hidden fixed top-16 right-0 w-64 h-full bg-white z-50 mobile-menu"
+                className="md:hidden fixed top-19 right-0 w-64 h-full bg-white z-50 mobile-menu"
               >
                 <div className="text-center py-8">
-                  <Link
-                    href="/#home"
-                    className="block mb-4 hover:text-blue-600"
-                    onClick={closeMobileMenu}
-                  >
-                    Home
-                  </Link>
                   <Link
                     href="/#about"
                     className="block mb-4 hover:text-blue"
@@ -117,30 +141,43 @@ const Navbar = () => {
                     About
                   </Link>
                   <Link
-                    href="/#service"
+                    href="/#services"
                     className="block mb-4 hover:text-blue"
                     onClick={closeMobileMenu}
                   >
-                    Service
+                    Services
                   </Link>
                   <Link
-                    href="/#service"
+                    href="/#project"
                     className="block mb-4 hover:text-blue"
                     onClick={closeMobileMenu}
                   >
-                    Projects
+                    Our Projects
                   </Link>
                   <Link
-                    href="/#service"
+                    href="/#"
                     className="block mb-4 hover:text-blue"
                     onClick={closeMobileMenu}
                   >
-                    Designs
+                    Bungalows
                   </Link>
-
+                  <Link
+                    href="/#"
+                    className="block mb-4 hover:text-blue"
+                    onClick={closeMobileMenu}
+                  >
+                    Duplex
+                  </Link>
+                  <Link
+                    href="/#"
+                    className="block mb-4 hover:text-blue"
+                    onClick={closeMobileMenu}
+                  >
+                    Flat
+                  </Link>
                   <Link
                     href="/#contact"
-                    className=" bg-blue text-white rounded-3xl border-blue border py-1 px-4 hover:bg-blue"
+                    className=" bg-transparent text-blue rounded border-blue border py-2 px-4 hover:text-white hover:bg-blue"
                     onClick={closeMobileMenu}
                   >
                     Contact Us

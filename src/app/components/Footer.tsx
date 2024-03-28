@@ -1,75 +1,115 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa6";
 
 import Link from "next/link";
 import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 
-const Footer = () => {
+const Footer: React.FC = () => {
+  const getFullYear = (): number => {
+    const currentYear: number = new Date().getFullYear();
+    return currentYear;
+  };
   return (
     <footer>
-      <div className="bg-slate-900 pt-2 md:pt-20 pb-4">
-        <div className="lg:w-11/12 pb-10 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
-          <div className=" font-bold text-3xl">
-            <Link href="/">
-              <Image
-                alt="logo"
-                src="/images/logo.jpg"
-                width="0"
-                height="0"
-                sizes="100vw"
-                className="w-[10rem] h-auto"
-                unoptimized
-              />
-            </Link>
-          </div>
-
-          <div className=" text-white md:px-0 px-5 text-sm">
-            <div className=" uppercase font-extrabold">Quick Links</div>
-
-            <Link href="#" className="my-5 block opacity-70">
-              About Us
-            </Link>
-            <Link href="#" className="my-5 block opacity-70">
-              Contact Us
-            </Link>
-            <Link href="#" className="my-5 block opacity-70">
-              Projects
-            </Link>
-          </div>
-
+      <div className="bg-slate-900  dark:bg-slate-900 pt-2 md:pt-20 pb-4">
+        <div className=" pb-10 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 place-items-center">
           <div className="md:px-0 px-5 text-sm text-white">
-            <div className="uppercase font-extrabold">Services</div>
+            <div className=" font-extrabold">Services</div>
+
             <p className="my-5 block opacity-70">Building Construction</p>
             <p className="my-5 block opacity-70">Architectural Design</p>
             <p className="my-5 block opacity-70">Renovation</p>
-          </div>
 
-          <div className="md:px-0 px-5 text-sm mt-5 text-white">
             <p className="my-5 block opacity-70">Civil Engineering</p>
             <p className="my-5 block opacity-70">Interior & Exterior Designs</p>
-            {/* <p className="my-5 block opacity-70">Brand Development</p> */}
+          </div>
+          <div className=" text-white md:px-0 px-5 text-sm">
+            <div className=" font-extrabold">Useful Links</div>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Home
+            </Link>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Services
+            </Link>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              About us
+            </Link>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Projects
+            </Link>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Contact Us
+            </Link>
+          </div>
+          <div className=" text-white md:px-0 px-5 text-sm">
+            <div className=" font-extrabold">Designs</div>
+
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Bungalow
+            </Link>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Duplex
+            </Link>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Flat
+            </Link>
+            <p className="my-5 block opacity-70">Non-residential</p>
+            <p className="my-5 block opacity-70">Renovation</p>
+
+            <Link
+              href="#"
+              passHref={true}
+              className="my-5 block opacity-70"
+            ></Link>
+          </div>
+
+          <div className=" text-white md:px-0 px-5 text-sm">
+            <div className=" font-extrabold">Company</div>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Terms of service
+            </Link>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Legal
+            </Link>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Privacy Policy
+            </Link>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Help
+            </Link>
+            <Link href="#" passHref={true} className="my-5 block opacity-70">
+              Support
+            </Link>
           </div>
         </div>
 
-        <div className=" max-w-screen-lg text-center mx-auto opacity-10 rounded-sm border border-white"></div>
-        <div className="flex flex-col items-start md:flex-row px-5 pt-8 justify-between md:items-center lg:w-11/12">
+        <div className="flex flex-col gap-2">
+          <h1 className="text-white text-center text-2xl font-extrabold tracking-wider">
+            Cove Design & Constructing LTD.
+          </h1>
+          <p className="text-center text-white text-sm font-normal leading-relaxed">
+            © {getFullYear()} CDC. All rights reserved.{" "}
+          </p>
           <div className="flex items-start mx-auto md:flex-row text-white">
-            <Link href="/#" className="w-6 mx-1">
-              <FaXTwitter />
-            </Link>
-            <Link href="#" className="w-6 mx-1">
-              <FaInstagram />
-            </Link>
-            <Link href="#" className="w-6 mx-1">
+            <Link
+              href="https://www.facebook.com/cdcconstruction.ng?mibextid=LQQJ4d"
+              passHref={true}
+              className="w-6 mx-1"
+            >
               <FaFacebookF />
             </Link>
-          </div>
-          <div className=" text-white  text-sm flex flex-col md:flex-row gap-5 md:gap-10">
-            <p className="block opacity-70">Privacy Policy</p>
-            <p className="block opacity-70">Terms of Service </p>
-            <p className="block opacity-70">Help</p>
+            <Link
+              href="https://www.instagram.com/cdc_construction_company_ltd?igsh=MWs4MHBuZWUycGFlZA%3D%3D&utm_source=qr"
+              passHref={true}
+              className="w-6 mx-1"
+            >
+              <FaInstagram />
+            </Link>
+            <Link href="/#" passHref={true} className="w-6 mx-1">
+              <FaTwitter />
+            </Link>
           </div>
         </div>
       </div>

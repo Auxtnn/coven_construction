@@ -41,7 +41,13 @@ const Features = () => {
     },
   ];
 
-  const FeaturesCard = ({ icon, title, text }) => {
+  interface FeaturesCardProps {
+    icon: React.ReactNode;
+    title: string;
+    text: string;
+  }
+
+  const FeaturesCard: React.FC<FeaturesCardProps> = ({ icon, title, text }) => {
     const [isHover, setIsHover] = useState(false);
 
     const handleMouseEnter = () => {
@@ -59,23 +65,23 @@ const Features = () => {
       >
         <div
           className={`${
-            isHover ? "bg-blue" : "bg-white"
-          } shadow-lg  flex grow flex-col w-full pl-5 pr-7 py-10 rounded-2xl items-start max-md:mt-7 max-md:pr-5`}
+            isHover ? "bg-blue" : ""
+          } shadow-lg  flex grow flex-col w-full py-10 rounded-2xl items-start max-md:mt-7 px-2`}
         >
           <div className={`text-3xl  ${isHover ? "text-white" : "text-blue"}`}>
             {icon}
           </div>
           <div
             className={`${
-              isHover ? "text-white" : "text-neutral-800"
-            } text-lg font-bold tracking-wider self-stretch mt-8`}
+              isHover ? "text-white" : ""
+            } text-base font-bold tracking-wider self-stretch mt-4`}
           >
             {title}
           </div>
           <div
             className={`${
-              isHover ? "text-white" : "text-neutral-800"
-            } text-sm leading-6 tracking-wider capitalize self-stretch mt-4`}
+              isHover ? "text-white" : ""
+            } text-sm leading-6 capitalize self-stretch mt-2`}
           >
             {text}
           </div>
@@ -85,18 +91,21 @@ const Features = () => {
   };
 
   return (
-    <div className="flex flex-col py-4 px-5 mx-auto max-w-screen-xl sm:py-16 lg:px-6 lg:w-11/12">
+    <div
+      className="flex flex-col py-4 px-5 mx-auto max-w-screen-xl sm:py-16 lg:px-6 lg:w-11/12"
+      id="services"
+    >
       <div className="text-blue text-2xl font-[900] md:text-center tracking-wider mt-4">
         Our Services
       </div>
-      <div className="text-zinc-900 text-opacity-80 m-auto md:text-center text-sm tracking-wider max-w-[550px] mt-4 max-md:max-w-full">
+      <div className=" text-opacity-80 m-auto md:text-center text-sm tracking-wider max-w-[550px] mt-4 max-md:max-w-full">
         Discover excellence in construction with us. From concept to completion,
         we offer top-notch services tailored to your needs. Explore our
         offerings below
       </div>
 
       <div className="self-stretch w-full mt-16 px- max-md:max-w-full max-md:mt-10">
-        <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0 justify-evenly">
+        <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
           {features.map((item, key) => (
             <FeaturesCard
               key={key}
