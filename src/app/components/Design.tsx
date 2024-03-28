@@ -21,44 +21,43 @@ const Design: React.FC = () => {
         Discover a curated collection of interior & exterior designs that blend
         innovation with functionality.
       </div>
-      <AnimatedSection>
-        <div className="container mx-auto flex flex-col md:flex-row items-center w-full md:px-4 lg:w-11/12">
-          {designItems.map((item: DesignItem, index: number) => (
-            <div
-              key={index}
-              className="w-full justify-center md:justify-start lg:w-1/2 md:p-6 py-5"
-            >
-              <div className="shadow-lg p-2 w-full">
-                <Image
-                  alt="client"
-                  src={item.imagePath}
-                  quality={100}
-                  height={314}
-                  width={478}
-                  unoptimized
-                  className="w-full"
-                />
 
-                <h6 className="my-4 text-[1rem] text-center font-black">
-                  {item.title}
-                </h6>
-                <h6 className="my-2 text-sm text-center">{item.description}</h6>
-                <div className="flex justify-center my-8">
-                  {" "}
-                  {/* Adjusted this div */}
-                  <Link
-                    href="/"
-                    className="text-blue flex items-center gap-2 px-4 py-2 md:my-5 rounded-full border border-blue shadow-xl text-sm"
-                  >
-                    <h3>View plan</h3>
-                    <IoIosArrowRoundForward className="text-blue text-xl rounded-[50%] border border-blue" />
-                  </Link>
-                </div>
+      <div className="container mx-auto flex flex-col md:flex-row items-center w-full md:px-4 lg:w-11/12">
+        {designItems.map((item: DesignItem, index: number) => (
+          <div
+            key={index}
+            className="w-full justify-center md:justify-start lg:w-1/2 md:p-6 py-5"
+          >
+            <div className="shadow-lg p-2 w-full">
+              <Image
+                alt="client"
+                src={item.imagePath}
+                quality={100}
+                height={314}
+                width={478}
+                unoptimized
+                className="w-full"
+              />
+
+              <h6 className="my-4 text-[1rem] text-center font-black">
+                {item.title}
+              </h6>
+              <h6 className="my-2 text-sm text-center">{item.description}</h6>
+              <div className="flex justify-center my-8">
+                {" "}
+                {/* Adjusted this div */}
+                <Link
+                  href="/"
+                  className="text-blue flex items-center gap-2 px-4 py-2 md:my-5 rounded-full border border-blue shadow-xl text-sm"
+                >
+                  <h3>View plan</h3>
+                  <IoIosArrowRoundForward className="text-blue text-xl rounded-[50%] border border-blue" />
+                </Link>
               </div>
             </div>
-          ))}
-        </div>
-      </AnimatedSection>
+          </div>
+        ))}
+      </div>
 
       <div className="flex justify-center">
         {" "}
