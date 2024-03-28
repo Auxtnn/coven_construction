@@ -1,10 +1,10 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa6";
 
 import Link from "next/link";
 import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
+import { FaEnvelope } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   const getFullYear = (): number => {
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
   };
   return (
     <footer>
-      <div className="bg-slate-900  dark:bg-slate-900 pt-2 md:pt-20 pb-4">
+      <div className="bg-slate-900 pt-2 md:pt-20 pb-4">
         <div className=" pb-10 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 place-items-center">
           <div className="md:px-0 px-5 text-sm text-white">
             <div className=" font-extrabold">Services</div>
@@ -76,11 +76,19 @@ const Footer: React.FC = () => {
             <Link href="#" passHref={true} className="my-5 block opacity-70">
               Privacy Policy
             </Link>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
-              Help
+            <Link
+              href="+2348103075739"
+              passHref={true}
+              className="my-5 block opacity-70"
+            >
+              0810 307 5739
             </Link>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
-              Support
+            <Link
+              href="mailto:cdcdesignandconstruction@gmail.com"
+              passHref={true}
+              className="my-5 block opacity-70"
+            >
+              Email
             </Link>
           </div>
         </div>
@@ -89,6 +97,7 @@ const Footer: React.FC = () => {
           <h1 className="text-white text-center text-2xl font-extrabold tracking-wider">
             Cove Design & Constructing LTD.
           </h1>
+
           <p className="text-center text-white text-sm font-normal leading-relaxed">
             © {getFullYear()} CDC. All rights reserved.{" "}
           </p>
@@ -107,8 +116,12 @@ const Footer: React.FC = () => {
             >
               <FaInstagram />
             </Link>
-            <Link href="/#" passHref={true} className="w-6 mx-1">
-              <FaTwitter />
+            <Link
+              href="mailto:cdcdesignandconstruction@gmail.com"
+              passHref={true}
+              className="w-6 mx-1"
+            >
+              <FaEnvelope />
             </Link>
           </div>
         </div>
