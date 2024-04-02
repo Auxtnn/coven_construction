@@ -3,6 +3,7 @@ import Image from "next/image";
 
 const About: React.FC = () => {
   return (
+    
     <div
       className="flex justify-center items-center px-16  max-md:px-5 md:pt-16"
       id="about"
@@ -64,6 +65,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };
