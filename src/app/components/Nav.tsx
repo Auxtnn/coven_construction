@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,24 +8,29 @@ import { TfiClose } from "react-icons/tfi";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import AnimatedSection from "./AnimatedSection";
 
+interface DropdownItem {
+  label: string;
+  link: string;
+}
+
+interface Dropdown {
+  label: string;
+  items: DropdownItem[];
+}
+
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const [bungalowDropdownOpen, setBungalowDropdownOpen] =
+    useState<boolean>(false);
+  const [duplexDropdownOpen, setDuplexDropdownOpen] = useState<boolean>(false);
+  const [flatsDropdownOpen, setFlatsDropdownOpen] = useState<boolean>(false);
+  const [dropdownHovered, setDropdownHovered] = useState<string | null>(null);
 
   // Close the menu if clicked outside the menu
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
-      if (
-        isMobileMenuOpen &&
-        !!(e.target as HTMLElement).closest(".mobile-menu")
-      ) {
+      const menu = document.querySelector(".mobile-menu");
+      if (menu && !menu.contains(e.target as Node)) {
         closeMobileMenu();
       }
     };
@@ -36,6 +41,94 @@ const Navbar: React.FC = () => {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleDropdownHover = (label: string) => {
+    setDropdownHovered(label);
+  };
+
+  const handleDropdownLeave = () => {
+    setDropdownHovered(null);
+  };
+
+  const toggleBungalowDropdown = () => {
+    setBungalowDropdownOpen(!bungalowDropdownOpen);
+  };
+
+  const toggleDuplexDropdown = () => {
+    setDuplexDropdownOpen(!duplexDropdownOpen);
+  };
+
+  const toggleFlatsDropdown = () => {
+    setFlatsDropdownOpen(!flatsDropdownOpen);
+  };
+
+  const handleDropdownClick = (dropdownLabel: string) => {
+    // Close all dropdowns except the clicked one
+    if (dropdownLabel === "Bungalows") {
+      setBungalowDropdownOpen(!bungalowDropdownOpen);
+      setDuplexDropdownOpen(false);
+      setFlatsDropdownOpen(false);
+    } else if (dropdownLabel === "Duplex") {
+      setDuplexDropdownOpen(!duplexDropdownOpen);
+      setBungalowDropdownOpen(false);
+      setFlatsDropdownOpen(false);
+    } else if (dropdownLabel === "Flats") {
+      setFlatsDropdownOpen(!flatsDropdownOpen);
+      setBungalowDropdownOpen(false);
+      setDuplexDropdownOpen(false);
+    }
+  };
+
+  const handleDropdownItemClick = () => {
+    // Close mobile menu when a dropdown item is clicked
+    closeMobileMenu();
+
+    // Close the dropdown of the clicked item
+    setBungalowDropdownOpen(false);
+    setDuplexDropdownOpen(false);
+    setFlatsDropdownOpen(false);
+  };
+
+  const dropdowns: Dropdown[] = [
+    {
+      label: "Bungalows",
+      items: [
+        { label: "2 Bedroom Bungalow", link: "#" },
+        { label: "3 Bedroom Bungalow", link: "#" },
+        { label: "4 Bedroom Bungalow", link: "#" },
+        { label: "5 Bedroom Bungalow", link: "#" },
+        { label: "6+ Bedroom Bungalow", link: "#" },
+      ],
+    },
+    {
+      label: "Duplex",
+      items: [
+        { label: "2 Bedroom Duplex", link: "#" },
+        { label: "3 Bedroom Duplex", link: "#" },
+        { label: "4 Bedroom Duplex", link: "#" },
+        { label: "5 Bedroom Duplex", link: "#" },
+        { label: "6+ Bedroom Duplex", link: "#" },
+      ],
+    },
+    {
+      label: "Flats",
+      items: [
+        { label: "2 Bedroom Flat", link: "#" },
+        { label: "3 Bedroom Flat", link: "#" },
+        { label: "4 Bedroom Flat", link: "#" },
+        { label: "5 Bedroom Flat", link: "#" },
+        { label: "6+ Bedroom Flat", link: "#" },
+      ],
+    },
+  ];
 
   return (
     <header className=" bg-white w-full sticky top-0 z-10">
@@ -78,28 +171,35 @@ const Navbar: React.FC = () => {
                 Projects
                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
               </Link>
-              <Link
-                href="/#"
-                className="group inline-block relative text-gray-950 font-semibold transition-colors duration-300"
-              >
-                Bungalows
-                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-              </Link>
-              <Link
-                href="/#"
-                className="group inline-block relative text-gray-950 font-semibold transition-colors duration-300"
-              >
-                Duplex
-                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-              </Link>
 
-              <Link
-                href="#"
-                className="group inline-block relative text-gray-950 font-semibold transition-colors duration-300"
-              >
-                Flat
-                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-              </Link>
+              {dropdowns.map((dropdown, index) => (
+                <div
+                  key={index}
+                  className="relative group"
+                  onMouseEnter={() => handleDropdownHover(dropdown.label)}
+                  onMouseLeave={handleDropdownLeave}
+                >
+                  <span className="group inline-block relative text-gray-950 font-semibold transition-colors duration-300 cursor-pointer">
+                    {dropdown.label}
+                    <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                  </span>
+                  {dropdown.label === dropdownHovered && (
+                    <div className="absolute w-48 z-10 bg-white py-2 shadow-lg rounded-md">
+                      <div className="flex flex-col">
+                        {dropdown.items.map((item, idx) => (
+                          <Link
+                            key={idx}
+                            href={item.link}
+                            className="inline text-[.95rem] pl-2 py-2 text-gray-800 hover:bg-gray-100"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
 
               <Link
                 href="/#contact"
@@ -152,29 +252,37 @@ const Navbar: React.FC = () => {
                     className="block mb-4 hover:text-blue"
                     onClick={closeMobileMenu}
                   >
-                    Our Projects
+                    Projects
                   </Link>
-                  <Link
-                    href="/#"
-                    className="block mb-4 hover:text-blue"
-                    onClick={closeMobileMenu}
-                  >
-                    Bungalows
-                  </Link>
-                  <Link
-                    href="/#"
-                    className="block mb-4 hover:text-blue"
-                    onClick={closeMobileMenu}
-                  >
-                    Duplex
-                  </Link>
-                  <Link
-                    href="/#"
-                    className="block mb-4 hover:text-blue"
-                    onClick={closeMobileMenu}
-                  >
-                    Flat
-                  </Link>
+
+                  {dropdowns.map((dropdown, index) => (
+                    <div key={index} className="mb-4">
+                      <span
+                        onClick={() => handleDropdownClick(dropdown.label)}
+                        className="block mb-2 text-gray-800 cursor-pointer"
+                      >
+                        {dropdown.label}
+                      </span>
+                      {(dropdown.label === "Bungalows" &&
+                        bungalowDropdownOpen) ||
+                      (dropdown.label === "Duplex" && duplexDropdownOpen) ||
+                      (dropdown.label === "Flats" && flatsDropdownOpen) ? (
+                        <div>
+                          {dropdown.items.map((item, idx) => (
+                            <Link
+                              key={idx}
+                              href={item.link}
+                              className="block mb-2 hover:text-blue"
+                              // onClick={closeMobileMenu}
+                              onClick={handleDropdownItemClick}
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      ) : null}
+                    </div>
+                  ))}
                   <Link
                     href="/#contact"
                     className=" bg-transparent text-blue rounded border-blue border py-2 px-4 hover:text-white hover:bg-blue"
