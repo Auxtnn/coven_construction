@@ -74,13 +74,13 @@ const Portfolio: React.FC = () => {
           expertise and dedication to excellence in construction and design
         </div>
 
-        <div className="container mx-auto  flex flex-col md:flex-row items-center w-full md:px-4 lg:w-11/12">
+        <div className="container mx-auto flex flex-col md:flex-row items-center w-full md:px-4 lg:w-11/12">
           {visibleProjectItems.map((item, index) => (
             <div
               key={index}
               className="w-full justify-center  md:justify-start lg:w-11/12 md:p-6 py-5"
             >
-              <div className="shadow-lg p-2 w-full">
+              <div className="shadow-lg  p-2 w-full">
                 <Image
                   alt="client"
                   src={item.imagePath}
@@ -88,7 +88,7 @@ const Portfolio: React.FC = () => {
                   height={314}
                   width={478}
                   unoptimized
-                  className="w-full"
+                  className="object-center object-cover w-full h-full"
                 />
 
                 <h6 className="my-4 text-[1rem] font-black">{item.title}</h6>

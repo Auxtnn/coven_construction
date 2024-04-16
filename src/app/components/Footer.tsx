@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 import { FaEnvelope } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const Footer: React.FC = () => {
   const getFullYear = (): number => {
@@ -93,7 +94,7 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col gap-2">
           <h1 className="text-white text-center text-2xl font-extrabold tracking-wider">
-            Cove Design & Constructing LTD.
+            Cove Design & Contracting LTD.
           </h1>
 
           <p className="text-center text-white text-sm font-normal leading-relaxed">
@@ -122,6 +123,11 @@ const Footer: React.FC = () => {
               <FaEnvelope />
             </Link>
           </div>
+        </div>
+        <div className="fixed right-[1rem] bottom-10 border-2 rounded-full border-green-700 p-2 ">
+          <Link href="https://wa.link/530cj2" target="_blank">
+            <IoLogoWhatsapp className="animate-pulse text-green-700 rounded-full p-1 md:text-5xl text-6xl bg-emerald-100" />
+          </Link>
         </div>
       </div>
     </footer>

@@ -3,23 +3,22 @@ import Image from "next/image";
 
 const About: React.FC = () => {
   return (
-    
     <div
       className="flex justify-center items-center px-16  max-md:px-5 md:pt-16"
       id="about"
     >
       <div className="mt-8 w-full max-w-[1200px] max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          <div className="flex flex-col md:mr-10 mr-0 mx-auto w-[50%] md:order-first order-last mt-6 md:mt-0 max-md:ml-0 max-md:w-full">
-            <div className="lg:mt-[4rem]">
+          <div className="flex flex-col mr-0 mx-auto w-[50%] md:order-first order-last mt-6 md:mt-0 max-md:w-full">
+            <div className="md:max-w-md w-full mx-2 pr-4">
               <Image
-                src="/images/w2.png"
+                src="/images/ceo3.jpg"
                 alt="image"
-                width={650}
+                width={200}
                 quality={100}
                 height={20}
                 unoptimized
-                className="rounded-bl-full  border-blue shadow-xl border-b-8 rounded-br-full"
+                className="rounded-bl-full w-full border-blue shadow-xl border-b-8 rounded-br-full"
               />
             </div>
           </div>
@@ -65,7 +64,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

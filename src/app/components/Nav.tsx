@@ -101,31 +101,31 @@ const Navbar: React.FC = () => {
     {
       label: "Bungalows",
       items: [
-        { label: "2 Bedroom Bungalow", link: "#" },
-        { label: "3 Bedroom Bungalow", link: "#" },
-        { label: "4 Bedroom Bungalow", link: "#" },
-        { label: "5 Bedroom Bungalow", link: "#" },
-        { label: "6+ Bedroom Bungalow", link: "#" },
+        { label: "2 Bedroom Bungalow", link: "/bungalows/2-bedroom-bungalow" },
+        { label: "3 Bedroom Bungalow", link: "/bungalows/3-bedroom-bungalow" },
+        { label: "4 Bedroom Bungalow", link: "/bungalows/4-bedroom-bungalow" },
+        { label: "5 Bedroom Bungalow", link: "/bungalows/5-bedroom-bungalow" },
+        { label: "6+ Bedroom Bungalow", link: "/bungalows/6-bedroom-bungalow" },
       ],
     },
     {
       label: "Duplex",
       items: [
-        { label: "2 Bedroom Duplex", link: "#" },
-        { label: "3 Bedroom Duplex", link: "#" },
-        { label: "4 Bedroom Duplex", link: "#" },
-        { label: "5 Bedroom Duplex", link: "#" },
-        { label: "6+ Bedroom Duplex", link: "#" },
+        { label: "2 Bedroom Duplex", link: "/duplex/2-bedroom-duplex" },
+        { label: "3 Bedroom Duplex", link: "/duplex/3-bedroom-duplex" },
+        { label: "4 Bedroom Duplex", link: "/duplex/4-bedroom-duplex" },
+        { label: "5 Bedroom Duplex", link: "/duplex/5-bedroom-duplex" },
+        { label: "6+ Bedroom Duplex", link: "/duplex/6-bedroom-duplex" },
       ],
     },
     {
       label: "Flats",
       items: [
-        { label: "2 Bedroom Flat", link: "#" },
-        { label: "3 Bedroom Flat", link: "#" },
-        { label: "4 Bedroom Flat", link: "#" },
-        { label: "5 Bedroom Flat", link: "#" },
-        { label: "6+ Bedroom Flat", link: "#" },
+        { label: "2 Bedroom Flat", link: "/flat/2-bedroom-flat" },
+        { label: "3 Bedroom Flat", link: "/flat/3-bedroom-flat" },
+        { label: "4 Bedroom Flat", link: "/flat/4-bedroom-flat" },
+        { label: "5 Bedroom Flat", link: "/flat/5-bedroom-flat" },
+        { label: "6+ Bedroom Flat", link: "/flat/6-bedroom-flat" },
       ],
     },
   ];
@@ -235,21 +235,21 @@ const Navbar: React.FC = () => {
                 <div className="text-center py-8">
                   <Link
                     href="/#about"
-                    className="block mb-4 hover:text-blue"
+                    className="block font-semibold mb-4 hover:text-blue"
                     onClick={closeMobileMenu}
                   >
                     About
                   </Link>
                   <Link
                     href="/#services"
-                    className="block mb-4 hover:text-blue"
+                    className="block font-semibold mb-4 hover:text-blue"
                     onClick={closeMobileMenu}
                   >
                     Services
                   </Link>
                   <Link
                     href="/#project"
-                    className="block mb-4 hover:text-blue"
+                    className="block mb-4 font-semibold hover:text-blue"
                     onClick={closeMobileMenu}
                   >
                     Projects
@@ -259,7 +259,7 @@ const Navbar: React.FC = () => {
                     <div key={index} className="mb-4">
                       <span
                         onClick={() => handleDropdownClick(dropdown.label)}
-                        className="block mb-2 text-gray-800 cursor-pointer"
+                        className="block mb-2 font-semibold text-gray-800 cursor-pointer"
                       >
                         {dropdown.label}
                       </span>
@@ -272,7 +272,7 @@ const Navbar: React.FC = () => {
                             <Link
                               key={idx}
                               href={item.link}
-                              className="block mb-2 hover:text-blue"
+                              className="block mb-2 hover:text-blue "
                               // onClick={closeMobileMenu}
                               onClick={handleDropdownItemClick}
                             >

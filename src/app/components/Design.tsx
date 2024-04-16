@@ -2,8 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { designItems } from "../../../constants";
 import AnimatedSection from "./AnimatedSection";
+import { getRoomByType } from "../../../sanity/lib/query";
+import type { RoomsType } from "../../../types";
 
 interface DesignItem {
   imagePath: string;
@@ -11,7 +12,9 @@ interface DesignItem {
   description: string;
 }
 
-const Design: React.FC = () => {
+const Design: React.FC = async () => {
+  const bungalow: RoomsType[] = await getRoomByType("2-bedroom-duplex");
+
   return (
     <div className=" py-8 md:py-6" id="design">
       <div className="text-blue px-5 text-2xl font-[900] md:text-center tracking-wider mt-4">
@@ -22,46 +25,32 @@ const Design: React.FC = () => {
         innovation with functionality.
       </div>
 
-      <div className="container mx-auto flex flex-col md:flex-row items-center w-full md:px-4 lg:w-11/12">
-        {designItems.map((item: DesignItem, index: number) => (
+      <div className="container place-items-center mx-auto gap-8 pt-6 grid md:grid-cols-3 grid-cols-1 w-full md:px-4 lg:w-11/12">
+        {bungalow.map((bungalow: any) => (
           <div
-            key={index}
-            className="w-full justify-center md:justify-start lg:w-1/2 md:p-6 py-5"
+            className="md:max-w-sm w-full mx-2 rounded overflow-hidden shadow-lg"
+            key={bungalow._id}
           >
-            <div className="shadow-lg p-2 w-full">
+            {/* {bungalow.images.map((image: any, index: number) => (
               <Image
-                alt="client"
-                src={item.imagePath}
-                quality={100}
-                height={314}
-                width={478}
-                unoptimized
                 className="w-full"
+                width={300}
+                height={300}
+                key={index}
+                src={image.url} // Assuming 'url' is the field containing the image URL
+                alt={image.alt}
               />
-
-              <h6 className="my-4 text-[1rem] text-center font-black">
-                {item.title}
-              </h6>
-              <h6 className="my-2 text-sm text-center">{item.description}</h6>
-              <div className="flex justify-center my-8">
-                {" "}
-                {/* Adjusted this div */}
-                <Link
-                  href="/"
-                  className="text-blue flex items-center gap-2 px-4 py-2 md:my-5 rounded-full border border-blue shadow-xl text-sm"
-                >
-                  <h3>View plan</h3>
-                  <IoIosArrowRoundForward className="text-blue text-xl rounded-[50%] border border-blue" />
-                </Link>
-              </div>
-            </div>
+            ))} */}
+            {/* <div className="px-2 py-4">
+              <div className="font-bold text-base mb-2">{bungalow.name}</div>
+            </div> */}
           </div>
         ))}
       </div>
 
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         {" "}
-        {/* Adjusted this div */}
+      
         <Link
           href="/"
           className="text-white bg-blue flex items-center gap-2 px-4 py-2 md:my-5 rounded-full border border-blue shadow-xl text-sm"
@@ -69,7 +58,7 @@ const Design: React.FC = () => {
           <h3>See more</h3>
           <IoIosArrowRoundForward className="text-white text-xl rounded-[50%] border" />
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

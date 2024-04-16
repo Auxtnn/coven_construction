@@ -10,7 +10,7 @@ import { MdDesignServices } from "react-icons/md";
 import { HiBuildingStorefront } from "react-icons/hi2";
 import { FaTools } from "react-icons/fa";
 import { FaBroom } from "react-icons/fa";
-const Features = () => {
+const Features: React.FC = () => {
   //track hovering on card
 
   const features = [
