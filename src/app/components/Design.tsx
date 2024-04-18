@@ -6,12 +6,6 @@ import AnimatedSection from "./AnimatedSection";
 import { getRoomByType } from "../../../sanity/lib/query";
 import type { RoomsType } from "../../../types";
 
-interface DesignItem {
-  imagePath: string;
-  title: string;
-  description: string;
-}
-
 const Design: React.FC = async () => {
   const bungalow: RoomsType[] = await getRoomByType("2-bedroom-duplex");
 

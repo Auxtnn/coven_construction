@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <div className="bg-slate-900 pt-2 md:pt-20 pb-4">
-        <div className=" pb-10 pt-10 md:pt-5 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 place-items-center">
+        <div className=" pb-10 pt-10 md:pt-5 text-gray-800 sm:grid md:grid-cols-3 sm:grid-cols-2 place-items-center">
           <div className="md:px-0 px-5 text-sm text-white">
             <div className=" font-extrabold">Services</div>
             <p className="my-5 block opacity-70">Building Construction</p>
@@ -26,9 +26,7 @@ const Footer: React.FC = () => {
           </div>
           <div className=" text-white md:px-0 px-5 text-sm">
             <div className=" font-extrabold">Useful Links</div>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
-              Home
-            </Link>
+
             <Link href="#" passHref={true} className="my-5 block opacity-70">
               Services
             </Link>
@@ -40,6 +38,14 @@ const Footer: React.FC = () => {
             </Link>
             <Link href="#" passHref={true} className="my-5 block opacity-70">
               Contact Us
+            </Link>
+            <Link
+              href="tel:+2348103075739"
+              target="_blank"
+              passHref={true}
+              className="my-5 block opacity-70"
+            >
+              0810 307 5739
             </Link>
           </div>
           <div className=" text-white md:px-0 px-5 text-sm">
@@ -64,7 +70,7 @@ const Footer: React.FC = () => {
             ></Link>
           </div>
 
-          <div className=" text-white md:px-0 px-5 text-sm">
+          {/* <div className=" text-white md:px-0 px-5 text-sm">
             <div className=" font-extrabold">Company</div>
             <Link href="#" passHref={true} className="my-5 block opacity-70">
               Terms of service
@@ -76,7 +82,8 @@ const Footer: React.FC = () => {
               Privacy Policy
             </Link>
             <Link
-              href="+2348103075739"
+              href="https://wa.link/530cj2"
+              target="_blank"
               passHref={true}
               className="my-5 block opacity-70"
             >
@@ -89,7 +96,7 @@ const Footer: React.FC = () => {
             >
               Email
             </Link>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex flex-col gap-2">

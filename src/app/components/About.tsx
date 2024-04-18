@@ -25,7 +25,8 @@ const About: React.FC = () => {
           <div className="flex flex-col w-[50%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow max-md:mt-10 max-md:max-w-full">
               <div className="md:text-xl text-lg font-bold text-blue max-md:max-w-full">
-                Welcome to COVE DESIGN AND CONTRACTING LTD
+                Welcome to COVE DESIGN AND CONTRACTING LTD <br />{" "}
+                <span className="text-base">(RC: 7270692) </span>
               </div>
 
               <div className=" gap-5 mt-4 max-md:max-w-full">
