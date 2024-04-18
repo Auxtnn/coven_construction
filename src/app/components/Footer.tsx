@@ -1,9 +1,6 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
-import Image from "next/image";
-import AnimatedSection from "./AnimatedSection";
 import { FaEnvelope } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 
@@ -15,7 +12,7 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <div className="bg-slate-900 pt-2 md:pt-20 pb-4">
-        <div className=" pb-10 pt-10 md:pt-5 text-gray-800 sm:grid md:grid-cols-3 sm:grid-cols-2 place-items-center">
+        <div className=" pb-10 pt-10 md:pt-5 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 place-items-center">
           <div className="md:px-0 px-5 text-sm text-white">
             <div className=" font-extrabold">Services</div>
             <p className="my-5 block opacity-70">Building Construction</p>
@@ -26,18 +23,63 @@ const Footer: React.FC = () => {
           </div>
           <div className=" text-white md:px-0 px-5 text-sm">
             <div className=" font-extrabold">Useful Links</div>
-
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
+            <Link href="/" passHref={true} className="my-5 block opacity-70">
+              Home
+            </Link>
+            <Link
+              href="/#services"
+              passHref={true}
+              className="my-5 block opacity-70"
+            >
               Services
             </Link>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
+            <Link
+              href="/#about"
+              passHref={true}
+              className="my-5 block opacity-70"
+            >
               About us
             </Link>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
+            <Link
+              href="/#project"
+              passHref={true}
+              className="my-5 block opacity-70"
+            >
               Projects
             </Link>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
+            <Link
+              href="/#contact"
+              passHref={true}
+              className="my-5 block opacity-70"
+            >
               Contact Us
+            </Link>
+          </div>
+          <div className=" text-white md:px-0 px-5 text-sm">
+            <div className=" font-extrabold">Designs</div>
+            <p className="my-5 block opacity-70">Bungalow</p>
+            <p className="my-5 block opacity-70">Duplex</p>
+            <p className="my-5 block opacity-70">Flat</p>
+            <p className="my-5 block opacity-70">Non-residential</p>
+            <p className="my-5 block opacity-70">Renovation</p>
+          </div>
+
+          <div className=" text-white md:px-0 px-5 text-sm">
+            <div className=" font-extrabold">Company</div>
+            <Link
+              href="/terms"
+              passHref={true}
+              className="my-5 block opacity-70"
+            >
+              Terms of service
+            </Link>
+
+            <Link
+              href="/privacy-policy"
+              passHref={true}
+              className="my-5 block opacity-70"
+            >
+              Privacy Policy
             </Link>
             <Link
               href="tel:+2348103075739"
@@ -45,49 +87,15 @@ const Footer: React.FC = () => {
               passHref={true}
               className="my-5 block opacity-70"
             >
-              0810 307 5739
-            </Link>
-          </div>
-          <div className=" text-white md:px-0 px-5 text-sm">
-            <div className=" font-extrabold">Designs</div>
-
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
-              Bungalow
-            </Link>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
-              Duplex
-            </Link>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
-              Flat
-            </Link>
-            <p className="my-5 block opacity-70">Non-residential</p>
-            <p className="my-5 block opacity-70">Renovation</p>
-
-            <Link
-              href="#"
-              passHref={true}
-              className="my-5 block opacity-70"
-            ></Link>
-          </div>
-
-          {/* <div className=" text-white md:px-0 px-5 text-sm">
-            <div className=" font-extrabold">Company</div>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
-              Terms of service
-            </Link>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
-              Legal
-            </Link>
-            <Link href="#" passHref={true} className="my-5 block opacity-70">
-              Privacy Policy
+              08103075739
             </Link>
             <Link
-              href="https://wa.link/530cj2"
+              href="tel:+2348072549239"
               target="_blank"
               passHref={true}
               className="my-5 block opacity-70"
             >
-              0810 307 5739
+              08072549239
             </Link>
             <Link
               href="mailto:cdcdesignandconstruction@gmail.com"
@@ -96,7 +104,7 @@ const Footer: React.FC = () => {
             >
               Email
             </Link>
-          </div> */}
+          </div>
         </div>
 
         <div className="flex flex-col gap-2">

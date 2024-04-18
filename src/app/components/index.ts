@@ -21,7 +21,8 @@ import Navbar from "./Nav";
 import Portfolio from "./Project";
 import Features from "./Service";
 import HeroSection from "./HeroSection";
-
+import Privacy from "./Policy";
+import Term from "./Terms";
 export {
   TwoBedB,
   ThreeBedB,
@@ -46,4 +47,6 @@ export {
   Footer,
   Features,
   HeroSection,
+  Term,
+  Privacy,
 };
