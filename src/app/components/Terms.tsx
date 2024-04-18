@@ -5,7 +5,7 @@ const Term: React.FC = () => {
   return (
     <div>
       <div className="mx-auto max-w-3xl px-4 py-16">
-        <h1 className="text-primary text-2xl mb-4 font-extrabold">
+        <h1 className="text-blue text-2xl mb-4 font-extrabold">
           Cove Design and Contracting Ltd. Terms of Service
         </h1>
         <p className="mb-4">
@@ -15,7 +15,7 @@ const Term: React.FC = () => {
           Services, you agree to be bound by these Terms.
         </p>
         <div className="text-gray-700 mb-6">
-          <h2 className="text-primary text-lg mb-2">Acceptance of Terms</h2>
+          <h2 className="text-blue text-lg mb-2">Acceptance of Terms</h2>
           <p>
             By accessing or using our Services, you agree to these Terms and to
             comply with all applicable laws and regulations. If you do not agree
@@ -23,7 +23,7 @@ const Term: React.FC = () => {
           </p>
         </div>
         <div className="text-gray-700 mb-6">
-          <h2 className="text-primary text-lg mb-2">Use of Services</h2>
+          <h2 className="text-blue text-lg mb-2">Use of Services</h2>
           <p>
             a. Our Services are designed to deliver exceptional ddesigns and
             construction solutions with integrity, innovation, and excellence.
@@ -36,7 +36,7 @@ const Term: React.FC = () => {
           </p>
         </div>
         <div className="text-gray-700 mb-6">
-          <h2 className="text-primary text-lg mb-2">Intellectual Property</h2>
+          <h2 className="text-blue text-lg mb-2">Intellectual Property</h2>
           <p>
             a. All design plans, content, and materials provided through our
             Services are the property of Cove Design and Contracting Ltd. or its
@@ -49,7 +49,7 @@ const Term: React.FC = () => {
         </div>
 
         <div className="text-gray-700 mb-6">
-          <h2 className="text-primary text-lg mb-2">Privacy</h2>
+          <h2 className="text-blue text-lg mb-2">Privacy</h2>
           <p>
             a. Our Privacy Policy governs the collection, use, and disclosure of
             any personal information shared during our engagement with the
@@ -59,7 +59,7 @@ const Term: React.FC = () => {
           </p>
         </div>
         <div className="text-gray-700 mb-6">
-          <h2 className="text-primary text-lg mb-2">Limitation of Liability</h2>
+          <h2 className="text-blue text-lg mb-2">Limitation of Liability</h2>
           <p>
             a. To the fullest extent permitted by law, Cove Design and
             Contracting Ltd. shall not be liable for any direct, indirect,
@@ -68,7 +68,7 @@ const Term: React.FC = () => {
           </p>
         </div>
         <div className="text-gray-700 mb-6">
-          <h2 className="text-primary text-lg mb-2">Termination</h2>
+          <h2 className="text-blue text-lg mb-2">Termination</h2>
           <p>
             a. Cove Design and Contracting Ltd. reserves the right to terminate
             or suspend your engagement with our Services at any time and for any
@@ -76,7 +76,7 @@ const Term: React.FC = () => {
           </p>
         </div>
         <div className="text-gray-700 mb-6">
-          <h2 className="text-primary text-lg mb-2">Changes to Terms</h2>
+          <h2 className="text-blue text-lg mb-2">Changes to Terms</h2>
           <p>
             a. We reserve the right to update or modify these Terms at any time
             without prior notice. Your continued engagement with our Services
@@ -85,7 +85,7 @@ const Term: React.FC = () => {
           </p>
         </div>
         <div className="text-gray-700 mb-6">
-          <h2 className="text-primary text-lg mb-2">Governing Law</h2>
+          <h2 className="text-blue text-lg mb-2">Governing Law</h2>
           <p>
             a. These Terms shall be governed by and construed in accordance with
             the laws of the jurisdiction of Cove Design and Contracting Ltd.,
@@ -93,11 +93,12 @@ const Term: React.FC = () => {
           </p>
         </div>
         <div className="text-gray-700 mb-6">
-          <h2 className="text-primary text-lg mb-2">Contact Us</h2>
+          <h2 className="text-blue text-lg mb-2">Contact Us</h2>
           <p>
             If you have any questions or concerns about these Terms, please
             contact us at{" "}
             <Link
+              className="text-blue"
               href="mailto:cdcdesignandconstruction@gmail.com"
               target="_blank"
             >
