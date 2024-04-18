@@ -13,7 +13,7 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      darkMode: ["class"],
+
       colors: {
         blue: "#1e4269",
         white: "#ffffff",
