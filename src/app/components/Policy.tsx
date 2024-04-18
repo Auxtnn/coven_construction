@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Privacy: React.FC = () => {
   return (
-    <main>
+    <div>
       <div className="mx-auto max-w-3xl px-4 py-16">
         <h1 className="text-blue text-2xl mb-4 font-extrabold">
           Cove Design and Contracting Ltd. Privacy Policy
@@ -32,20 +32,24 @@ const Privacy: React.FC = () => {
           <p>
             We may use the personal information we collect for the following
             purposes:
-            <p>
-              To provide and deliver our design and contracting services to you.
-            </p>
-            <p>
-              To communicate with you regarding your projects and inquiries.
-            </p>
-            <p>To respond to your questions, comments, and requests.</p>
-            <p>
-              To send you updates, and marketing communications related to our
-              services, where permitted by law.
-            </p>
-            <p>
-              To comply with legal obligations and enforce our Terms of Service.
-            </p>
+            <ul>
+              <li>
+                To provide and deliver our design and contracting services to
+                you.
+              </li>
+              <li>
+                To communicate with you regarding your projects and inquiries.
+              </li>
+              <li>To respond to your questions, comments, and requests.</li>
+              <li>
+                To send you updates, newsletters, and marketing communications
+                related to our services, where permitted by law.
+              </li>
+              <li>
+                To comply with legal obligations and enforce our Terms of
+                Service.
+              </li>
+            </ul>
           </p>
         </div>
 
@@ -111,19 +115,18 @@ const Privacy: React.FC = () => {
           <h2 className="text-blue text-lg mb-2">Contact Us</h2>
           <p>
             If you have any questions or concerns about this Privacy Policy or
-            our data practices, please contact us at
-            privacy@covedesignandcontracting.com.
+            our data practices, please contact us at{" "}
             <Link
+              className="text-blue"
               href="mailto:cdcdesignandconstruction@gmail.com"
               target="_blank"
-              className="text-blue"
             >
               cdcdesignandconstruction@gmail.com
             </Link>
           </p>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 
