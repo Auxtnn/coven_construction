@@ -81,7 +81,8 @@ const TwoBedroomBungalow = async () => {
                 DRAWING REF NO: {flat.drawingRefNo}
               </p>
               <Link
-                href="/#contact"
+                href="https://wa.link/530cj2"
+                target="_blank"
                 className="font-semibold bg-transparent shadow-lg text-blue rounded border-blue border py-2 px-4 hover:text-white hover:bg-blue"
               >
                 Buy Plan

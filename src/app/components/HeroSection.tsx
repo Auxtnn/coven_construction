@@ -53,14 +53,14 @@ const HeroSection: React.FC = () => {
               Discover Our Services
             </Link>
           </button>
-          <button>
+          {/* <button>
             <Link
               href="/#design"
               className="text-blue font-black bg-transparent rounded py-3 px-6 hover:text-white hover:bg-blue hover:border-blue border-2 border-blue"
             >
               View Our Designs
             </Link>
-          </button>
+          </button> */}
         </div>
       </div>
       <Number />
