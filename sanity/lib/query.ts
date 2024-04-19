@@ -17,7 +17,7 @@ export async function getRoomByType(roomType: string) {
         description
       }`,
       { roomType },
-      { tag: 'roomType', cache: "force-cache" } // Include tags within the query
+      { tag: "roomType", cache: "force-cache", next: { revalidate: 10 } }
     );
 
     console.log("Fetched:", response);

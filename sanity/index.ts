@@ -3,7 +3,6 @@ import { threeBungalowType } from "./schemaTypes/bungalow/3_bungalowType";
 import { fourBungalowType } from "./schemaTypes/bungalow/4_bungalowType";
 import { fiveBungalowType } from "./schemaTypes/bungalow/5_bungalowType";
 import { sixBungalowType } from "./schemaTypes/bungalow/6_bungalowType";
-
 import { twoDuplexType } from "./schemaTypes/duplex/2_duplexType";
 import { threeDuplexType } from "./schemaTypes/duplex/3_duplexType";
 import { fourDuplexType } from "./schemaTypes/duplex/4_duplexType";
