@@ -11,7 +11,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Cove Design & Contracting Ltd",
   description:
-    "Welcome to Coven Design & Contracting Ltd. We specialize in residential and commercial construction, interior and exterior design services. Contact us to bring your dreams to life.",
+    "Welcome to Cove Design & Contracting Ltd. We specialize in residential and commercial construction, interior and exterior design services. Contact us to bring your dreams to life.",
 };
 
 export default function RootLayout({
