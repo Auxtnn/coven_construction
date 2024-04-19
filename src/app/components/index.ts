@@ -23,7 +23,9 @@ import Features from "./Service";
 import HeroSection from "./HeroSection";
 import Privacy from "./Policy";
 import Term from "./Terms";
+// import AllDesigns from "./AllDesigns";
 export {
+  // AllDesigns,
   TwoBedB,
   ThreeBedB,
   FourBedB,
