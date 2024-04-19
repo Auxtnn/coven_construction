@@ -18,7 +18,8 @@ export async function getRoomByType(roomType: string) {
         drawingRefNo,
         description
       }`,
-      { roomType }
+      { roomType },
+      { cache: "force-cache" }
     );
 
     console.log("Fetched:", response);
