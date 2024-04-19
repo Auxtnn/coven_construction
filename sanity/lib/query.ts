@@ -1,12 +1,10 @@
-// sanity/sanity.query.ts
-
 import { groq } from "next-sanity";
 import { client } from "./client";
 
 export async function getRoomByType(roomType: string) {
   try {
     const response = await client.fetch(
-      groq`*[_type == $roomType] {
+      groq`*[_type == $roomType && defined(slug.current)] {
         'currentSlug': slug.current,
         _id,
         name,
@@ -19,7 +17,7 @@ export async function getRoomByType(roomType: string) {
         description
       }`,
       { roomType },
-      { cache: "force-cache" }
+      { tag: 'roomType', cache: "force-cache" } // Include tags within the query
     );
 
     console.log("Fetched:", response);
